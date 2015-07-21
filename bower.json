@@ -1,0 +1,30 @@
+{
+  "name": "steal-riot-example",
+  "version": "0.0.1",
+  "authors": [
+    "hiep <duongphuhiep@gmail.com>"
+  ],
+  "description": "stealjs riotjs project sample",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "riotjs",
+    "stealjs",
+    "Tutorial"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "riot": "~2.2.2",
+    "steal": "~0.10.5",
+    "materialize": "~0.97.0"
+  }
+}

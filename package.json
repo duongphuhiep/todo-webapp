@@ -1,0 +1,17 @@
+{
+  "name": "steal-riot-example",
+  "version": "1.0.0",
+  "description": "A demo Todo application with riot, materialcss, stealjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server",
+    "build-tags": "riot . gen/tags.js --ext tag",
+    "watch-tags": "riot --watch --ext tag --m . gen/tags.js"
+  },
+  "author": "hiep",
+  "license": "MIT",
+  "system": {
+    "npmIgnore": ["devDependencies", "optionalDependencies"]
+  }
+}
