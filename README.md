@@ -16,20 +16,19 @@ Back-end
 The project structure will gradually change base on my studies. I will experiment different ways to do thing evens if it is not the best for the situation.
 
 For now, I'm starting with the client-side
+       
+#Run client-side 
 
- Clone this repo and run 
-
+    $ npm install
     $ bower install
-    
-    #creates a http server with 0-configuration
-    $ npm install [`live-server`](https://www.npmjs.com/package/live-server)
-     
-    $ npm run build-tags  #generate [`gen/tags.js`](/gen/tags.js)
-      
-    #starts the [`live-server`](https://www.npmjs.com/package/live-server) and run the  browser `index.html`.
+    $ npm run build
     $ npm start   
+
+then Navigate to the `app` folder
 
 ##Notes
 
-* [stealjs](http://stealjs.com) can discover dependencies hieararchy from both `package.json` (npm) and `bower.json`. The dependencies hierarchy of npm is often much bigger than bower, so I recommend to use bower over npm on a frontend project.
+* I don't need [Grunt](http://gruntjs.com/sample-gruntfile) or [Gulp](http://gulpjs.com/), NPM is enough (see [How to Use npm as a Build Tool](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/
+))    
+* [stealjs](http://stealjs.com) can discover dependencies hierarchy from both `package.json` (npm) and `bower.json`. The dependencies hierarchy of npm is often much bigger than bower, so I recommend to use bower over npm on a frontend project.
 

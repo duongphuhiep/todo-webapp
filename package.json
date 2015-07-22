@@ -6,12 +6,25 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "live-server",
-    "build-tags": "riot . gen/tags.js --ext tag",
-    "watch-tags": "riot --watch --ext tag --m . gen/tags.js"
+    "build:tags": "riot app gen/tags.js --ext tag",
+    "build:typescript": "tscwatch build app gen -t ES5 -s -c",
+    "build": "npm run build:tags && npm run build:typescript",
+    "watch:tags": "riot --watch --ext tag --m app gen/tags.js",
+    "watch:typescript": "tscwatch watch app gen -t ES5 -s -c",
+    "watch": "parallelshell \"npm run watch:tags\" \"npm run watch:typescript\""
   },
   "author": "hiep",
   "license": "MIT",
   "system": {
-    "npmIgnore": ["devDependencies", "optionalDependencies"]
+    "npmIgnore": [
+      "devDependencies",
+      "optionalDependencies"
+    ]
+  },
+  "devDependencies": {
+    "live-server": "^0.7.1",
+    "parallelshell": "^1.2.0",
+    "typescript": "^1.5.3",
+    "typescript-watcher": "0.0.4"
   }
 }
