@@ -1,16 +1,16 @@
 {
-  "name": "steal-riot-example",
+  "name": "todo-webapp",
   "version": "1.0.0",
   "description": "A demo Todo application with riot, materialcss, stealjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "live-server",
-    "build:tags": "riot app gen/tags.js --ext tag",
-    "build:typescript": "tscwatch build app gen -t ES5 -s -c",
+    "build:tags": "riot app gen/tags.js --ext rtg",
+    "build:typescript": "tsc --project app",
     "build": "npm run build:tags && npm run build:typescript",
-    "watch:tags": "riot --watch --ext tag --m app gen/tags.js",
-    "watch:typescript": "tscwatch watch app gen -t ES5 -s -c",
+    "watch:tags": "riot --watch --ext rtg --m app gen/tags.js",
+    "watch:typescript": "tsc --watch --project app",
     "watch": "parallelshell \"npm run watch:tags\" \"npm run watch:typescript\""
   },
   "author": "hiep",
@@ -24,7 +24,9 @@
   "devDependencies": {
     "live-server": "^0.7.1",
     "parallelshell": "^1.2.0",
+    "riot": "^2.2.2",
+    "tsd": "^0.6.3",
     "typescript": "^1.5.3",
-    "typescript-watcher": "0.0.4"
+    "typescript-simple": "2.0.0-beta.1"
   }
 }

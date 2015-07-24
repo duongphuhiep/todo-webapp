@@ -2,3 +2,6 @@
 bower_components
 node_modules
 gen
+draft
+typings
+npm-debug.*

@@ -1,0 +1,47 @@
+//The model is TodoItem in the context of this tag
+<todo-item>
+	<div class="row" >
+		<div class="col s6">
+			<input type="checkbox" id="{ checkboxId }" checked={ done }/>
+			<label for="{ checkboxId }" class="waves-effect">
+				{ title }
+			</label>
+		</div>
+		<a class="hoverable waves-effect waves-red btn-flat">
+			<i class="material-icons">clear</i>
+		</a>
+	</div>
+	<style scoped>
+		/*:scope { display: block }*/
+		label {
+			color: black;
+			width: 100%;
+			display: inline-block;
+        }
+
+		[type="checkbox"] + label {
+		    height: 50px;
+            line-height: 50px;
+		}
+		[type="checkbox"]:checked + label:before {
+			margin-top: 0px;
+			top: 12px;
+        }
+        [type="checkbox"] + label:before {
+			margin-top: 0px;
+			top: 16px;
+        }
+        .btn, .btn-large, .btn-flat {
+            height: 50px;
+            line-height:50px;
+        }
+
+		.row {
+			margin:0px;
+			padding:0px;
+		}
+	</style>
+	<script>
+		this.checkboxId = this.id + '_chk';
+	</script>
+</todo-item>

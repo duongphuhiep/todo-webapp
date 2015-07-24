@@ -1,0 +1,11 @@
+<my-todos>
+	<todo-item each={ items }></todo-item>
+	<todo-item-add></todo-item-add>
+
+	<script>
+		this.items = [
+			new Model.TodoItem("1", "hello", true),
+			new Model.TodoItem("2", "world", false)
+		];
+	</script>
+</my-todos>
