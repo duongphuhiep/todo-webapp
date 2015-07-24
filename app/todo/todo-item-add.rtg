@@ -4,8 +4,14 @@
 			<input id="newTaskName" type="text" class="validate">
 			<label for="newTaskName">New task</label>
 		</div>
-		<a class="waves-effect waves-light btn"><i class="material-icons left">add</i>Add</a>
+		<a class="waves-effect waves-light btn" onclick={ addItem }><i class="material-icons left">add</i>Add</a>
 	</div>
 	<script>
+		addItem(e) {
+			var newItem = new Model.TodoItem(this.newTaskName.value, this.newTaskName.value, false);
+			console.log(newItem);
+			Model.TodoStore.items.push(newItem);
+			Model.TodoStore.items[0].title += "*";
+		}
 	</script>
 </todo-item-add>

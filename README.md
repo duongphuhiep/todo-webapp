@@ -21,9 +21,6 @@ For now, I'm starting with the client-side
        
 #Run client-side 
 
-    $ npm install tsd -g
-    $ tsd install
-
     $ npm install
     $ bower install
     $ npm run build
@@ -36,4 +33,47 @@ then Navigate to the `app` folder
 * I don't need [Grunt](http://gruntjs.com/sample-gruntfile) or [Gulp](http://gulpjs.com/), NPM is enough (see [How to Use npm as a Build Tool](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/
 ))    
 * [stealjs](http://stealjs.com) can discover dependencies hierarchy from both `package.json` (npm) and `bower.json`. The dependencies hierarchy of npm is often much bigger than bower, so I recommend to use bower over npm on a frontend project.
-* I use [`tsd`](http://definitelytyped.org/tsd/) to manage the typings folder which holds the TypeScripts definition of popular library
+* I use [`tsd`](http://definitelytyped.org/tsd/) to manage the [typings](/typings) folder which holds the TypeScripts definition of popular library. But I also updated the riot signatures, so it is no more the same as in the public repository  (the pull request is on the way). For the time being, I commited my [typings](/typings) folder as well 
+
+
+#Play ground
+
+* an inline `display:inline` ignores `height` and `line-height:200%` properties ([cf](http://stackoverflow.com/questions/6246119/adjusting-line-height-of-label-elements-in-html-forms/6246422#6246422))
+* Foreach
+
+```js
+['on','one','off','trigger'].forEach(function(api){
+	console.log(api);
+});
+```
+
+* Access object properties and `arguments` object
+
+<table>
+<tr><td>
+
+	<pre>
+var obj = {};
+obj["on"] = "foo";
+console.log(obj.on); //foo
+	</pre>
+
+</td><td>
+
+	<pre>
+var RiotControl = {};
+RiotControl["trigger"] = function() {
+	console.log(arguments); //{ '0': 'additem', '1': 'toto' }
+	
+	//convert arguments object to array
+	var args = [].slice.call(arguments); //[ 'additem', 'toto' ]
+}
+RiotControl.trigger("additem", "toto");
+	</pre>
+
+</td></tr>
+</table>
+
+
+
+
