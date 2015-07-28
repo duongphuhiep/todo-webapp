@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "live-server",
-    "build:tags": "riot app gen/tags.js --ext rtg",
+    "build:tags": "riot --ext rtg --m app gen/tags.js",
     "build:typescript": "tsc --project app",
     "build": "npm run build:tags && npm run build:typescript",
     "watch:tags": "riot --watch --ext rtg --m app gen/tags.js",

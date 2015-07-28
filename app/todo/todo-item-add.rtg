@@ -1,17 +1,17 @@
 <todo-item-add>
 	<div class="row">
 		<div class="input-field col s6">
-			<input id="newTaskName" type="text" class="validate">
+			<input id="newTaskName" type="text">
 			<label for="newTaskName">New task</label>
 		</div>
 		<a class="waves-effect waves-light btn" onclick={ addItem }><i class="material-icons left">add</i>Add</a>
 	</div>
 	<script>
 		addItem(e) {
-			var newItem = new Model.TodoItem(this.newTaskName.value, this.newTaskName.value, false);
-			console.log(newItem);
-			Model.TodoStore.items.push(newItem);
-			Model.TodoStore.items[0].title += "*";
+			var newItem = new riot.Model.TodoItem(this.newTaskName.value, this.newTaskName.value, false);
+
+			//send a action (add newItem) to the Store via the dispatcher (RiotControl)
+			riot.RiotControl.trigger("add", newItem);
 		}
 	</script>
 </todo-item-add>

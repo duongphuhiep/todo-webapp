@@ -1,5 +1,5 @@
 <my-todos>
-	<todo-item each={ Model.TodoStore.items }></todo-item>
+	<todo-item each={ riot.TodoStore.items }></todo-item>
 	<todo-item-add></todo-item-add>
 	<script>
 	</script>
