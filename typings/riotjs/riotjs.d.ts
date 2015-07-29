@@ -63,12 +63,12 @@ declare module "riot"
 
 	export var version: string;
 	function observable(el:any): Observable;
-	function mount(customTagSelector: string, ...opts:any):Tag[];
-	function mount(selectorOrDomNode: string, tagname:string, ...opts:any):Tag[];
-	function mountTo(domNode: string, tagname:string, ...opts:any):void;
-	function render(tagname:string, ...opts:any):Tag;
+	function mount(customTagSelector:string, ...opts:any[]):Tag[];
+	function mount(selectorOrDomNode: string, tagname:string, ...opts:any[]):Tag[];
+	function mountTo(domNode: string, tagname:string, ...opts:any[]):void;
+	function render(tagname:string, ...opts:any[]):Tag;
 	function update():Tag[];
-	function tag(tagName:string, html:string, css?:string, attrs?:any, constructor?:(opts:any)=>void)
+	function tag(tagName:string, html:string, css?:string, attrs?:any, constructor?:(opts:any)=>void): Tag
 
 	function route(to:any):void;
 }

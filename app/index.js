@@ -26,4 +26,7 @@ riot.Model = Model;
 
 require("../gen/todo/presenter");
 
-riot.mount("*");
+riot.tags = riot.mount("*");
+
+
+

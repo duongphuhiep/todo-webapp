@@ -3,15 +3,40 @@
 		<div class="input-field col s6">
 			<input id="newTaskName" type="text">
 			<label for="newTaskName">New task</label>
+			{ errorMessage }
 		</div>
 		<a class="waves-effect waves-light btn" onclick={ addItem }><i class="material-icons left">add</i>Add</a>
 	</div>
 	<script>
 		addItem(e) {
-			var newItem = new riot.Model.TodoItem(this.newTaskName.value, this.newTaskName.value, false);
+			var taskName = this.newTaskName.value;
+
+			//test empty
+			if (!taskName) {
+				console.log("empty");
+				this.errorMessage = "Cannot empty";
+				//this.update();
+				return;
+			}
+
+			//test digit only
+			var isnum = /^\d+$/.test(taskName);
+			if (isnum) {
+				console.log("digit");
+                this.errorMessage =  "Not valid because contains only digit";
+                //this.update();
+                return;
+            }
+
+			var newItem = new riot.Model.TodoItem(taskName, taskName, false);
+
+			console.log("Add clicked on "+taskName);
 
 			//send a action (add newItem) to the Store via the dispatcher (RiotControl)
 			riot.RiotControl.trigger("add", newItem);
+
+			this.errorMessage = "";
+			this.newTaskName.value = "";
 		}
 	</script>
 </todo-item-add>

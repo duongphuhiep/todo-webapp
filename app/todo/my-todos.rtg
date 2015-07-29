@@ -1,6 +1,4 @@
 <my-todos>
 	<todo-item each={ riot.TodoStore.items }></todo-item>
 	<todo-item-add></todo-item-add>
-	<script>
-	</script>
 </my-todos>
