@@ -1,7 +1,5 @@
 # Todo web application
 
-Status: Work in progress
-
 This is a **Work in progress** for my personal learning, I intent to build a full-stack demo application with the following technologies:
 
 * Front-end
@@ -18,7 +16,7 @@ This is a **Work in progress** for my personal learning, I intent to build a ful
 The project structure will gradually change base on my studies. I will experiment different ways to do thing evens if it is not the best for the situation.
 
 For now, I'm starting with the client-side
-       
+            
 #Run client-side 
 
     $ npm install
@@ -27,6 +25,11 @@ For now, I'm starting with the client-side
     $ npm start
 
 then Navigate to the `app` folder
+
+#Status
+
+* We can add/remove item now
+* Next: edit item in a new "page" so that we must to use front-end router
 
 ##Notes
 
