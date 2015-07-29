@@ -3,9 +3,12 @@
 import riot = require("riot");
 import Model = require("./Model");
 
-
 riot.TodoStore.on("add", (item:Model.TodoItem) => {
 	riot.TodoStore.add(item);
-	console.log(item);
+	riot.update(); //update the GUI
+});
+
+riot.TodoStore.on("remove", (item:Model.TodoItem) => {
+	riot.TodoStore.remove(item.id);
 	riot.update(); //update the GUI
 });

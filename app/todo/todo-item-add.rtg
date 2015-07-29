@@ -1,42 +1,66 @@
 <todo-item-add>
 	<div class="row">
 		<div class="input-field col s6">
-			<input id="newTaskName" type="text">
+			<input id="newTaskName" type="text" onfocus={ updateMessageError }>
 			<label for="newTaskName">New task</label>
 			{ errorMessage }
 		</div>
 		<a class="waves-effect waves-light btn" onclick={ addItem }><i class="material-icons left">add</i>Add</a>
 	</div>
 	<script>
+
+		/**
+		validate task description, switch the errorMessage
+		return true if the message is valid
+		*/
+		validate(taskName) {
+			//test empty
+            if (!taskName) {
+                console.log("empty");
+                this.errorMessage = "Cannot empty";
+                //this.update();
+                return false;
+            }
+
+            //test digit only
+            var isnum = /^\d+$/.test(taskName);
+            if (isnum) {
+                console.log("digit");
+                this.errorMessage =  "Not valid because contains only digit";
+                //this.update();
+                return false;
+            }
+
+			this.errorMessage = "";
+            return true;
+		}
+
+		/**
+		when user focus to the input field, if it is empty with a validation error
+		hide the message error
+		*/
+		updateMessageError(e) {
+			var taskName = this.newTaskName.value;
+			if (!taskName && this.errorMessage) {
+				console.log('update message error '+e);
+				this.errorMessage = null;
+			}
+		}
+
 		addItem(e) {
 			var taskName = this.newTaskName.value;
 
-			//test empty
-			if (!taskName) {
-				console.log("empty");
-				this.errorMessage = "Cannot empty";
-				//this.update();
+			if (!this.validate(taskName)) {
 				return;
 			}
 
-			//test digit only
-			var isnum = /^\d+$/.test(taskName);
-			if (isnum) {
-				console.log("digit");
-                this.errorMessage =  "Not valid because contains only digit";
-                //this.update();
-                return;
-            }
-
 			var newItem = new riot.Model.TodoItem(taskName, taskName, false);
 
-			console.log("Add clicked on "+taskName);
+			//console.log("Add clicked on "+taskName);
 
 			//send a action (add newItem) to the Store via the dispatcher (RiotControl)
 			riot.RiotControl.trigger("add", newItem);
-
-			this.errorMessage = "";
-			this.newTaskName.value = "";
+			this.newTaskName.value = ""; //reset the task input box
 		}
 	</script>
 </todo-item-add>

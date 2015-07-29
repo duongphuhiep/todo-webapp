@@ -10,6 +10,11 @@ export class TodoList {
 	add(item:TodoItem) {
 		this.items.push(item);
 	}
+	remove(itemId:string) {
+		this.items = $.grep(this.items, (el:TodoItem)=>{
+			return el.id != itemId;
+		});
+	}
 }
 
 import riot = require("riot"); //import the .d.ts for type checking
