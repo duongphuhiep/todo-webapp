@@ -10,30 +10,30 @@
 
 <body class="container">
 
-<div class="row">
-    <div class="col s1" style="background-color: gray">1</div>
-    <div class="col s1" style="background-color: darkgray">2</div>
-    <div class="col s1" style="background-color: gray">3</div>
-    <div class="col s1" style="background-color: darkgray">4</div>
-    <div class="col s1" style="background-color: gray">5</div>
-    <div class="col s1" style="background-color: darkgray">6</div>
-    <div class="col s1" style="background-color: gray">7</div>
-    <div class="col s1" style="background-color: darkgray">8</div>
-    <div class="col s1" style="background-color: gray">9</div>
-    <div class="col s1" style="background-color: darkgray">10</div>
-    <div class="col s1" style="background-color: gray">11</div>
-    <div class="col s1" style="background-color: darkgray">12</div>
+<div class="row" id="deco">
 </div>
+
 
 <h1>TODO list</h1>
 <my-todos></my-todos>
-
 
 <script src="../bower_components/steal/steal.js" data-main="app/index"></script>
 
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="../bower_components/materialize/dist/js/materialize.min.js"></script>
+
+<script language="JavaScript">
+	/* only for decoration */
+	$(function() {
+		var parent = $("#deco")
+		for (var i = 1; i<=12; i++) {
+			var cell = $("<div></div>").addClass("col s1").css("background-color", i%2==0 ? "gray":"darkgray").text(i);
+			parent.append(cell);
+		}
+	});
+</script>
+
 
 </body>
 </html>
