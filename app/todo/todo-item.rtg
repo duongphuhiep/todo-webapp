@@ -48,6 +48,7 @@
 		this.checkboxId = this.id + '_chk';
 
 		deleteItem(e) {
+			//console.log("delete "+e);
 			riot.RiotControl.trigger("remove", this);
 		}
 	</script>

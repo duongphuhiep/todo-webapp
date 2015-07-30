@@ -16,18 +16,16 @@
 		validate(taskName) {
 			//test empty
             if (!taskName) {
-                console.log("empty");
-                this.errorMessage = "Cannot empty";
-                //this.update();
+                //console.log("empty");
+                this.errorMessage = "Not valid because empty";
                 return false;
             }
 
             //test digit only
             var isnum = /^\d+$/.test(taskName);
             if (isnum) {
-                console.log("digit");
+                //console.log("digit");
                 this.errorMessage =  "Not valid because contains only digit";
-                //this.update();
                 return false;
             }
 
@@ -42,7 +40,7 @@
 		updateMessageError(e) {
 			var taskName = this.newTaskName.value;
 			if (!taskName && this.errorMessage) {
-				console.log('update message error '+e);
+				//console.log('update message error '+e);
 				this.errorMessage = null;
 			}
 		}

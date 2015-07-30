@@ -9,6 +9,7 @@ riot.TodoStore.on("add", (item:Model.TodoItem) => {
 });
 
 riot.TodoStore.on("remove", (item:Model.TodoItem) => {
+	//console.log("receive action remove "+item.id);
 	riot.TodoStore.remove(item.id);
 	riot.update(); //update the GUI
 });
