@@ -16,20 +16,3 @@ export class TodoList {
 		});
 	}
 }
-
-import riot = require("riot"); //import the global riot
-
-//init store
-var TodoStore = riot.observable(new TodoList([
-	new TodoItem("1", "hello", true),
-	new TodoItem("2", "world", false)
-]));
-
-//attache the store to the global event dispatcher
-import RiotControl = require("../../node_modules/riotcontrol/riotcontrol");
-RiotControl.addStore(TodoStore);
-
-//TodoStore to the global riot so that we can use them in the tag script
-riot.TodoStore = TodoStore;
-
-
