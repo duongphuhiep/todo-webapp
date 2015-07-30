@@ -37,7 +37,11 @@ then Navigate to the `app` folder
 ))    
 * [stealjs](http://stealjs.com) can discover dependencies hierarchy from both `package.json` (npm) and `bower.json`. The dependencies hierarchy of npm is often much bigger than bower, so I recommend to use bower over npm on a frontend project.
 * I use [`tsd`](http://definitelytyped.org/tsd/) to manage the [typings](/typings) folder which holds the TypeScripts definition of popular library. But I also updated the riot signatures, so it is no more the same as in the public repository  (the pull request is on the way). For the time being, I commited my [typings](/typings) folder as well 
-
+* In the template, Do not give to `each` an array of mixing observable / non-observable objects
+ ```
+    <todo-item each={ ItemArray }></todo-item>
+ ```   
+it is bad if the `ItemArray` contains mix observable + non-observable objects
 
 #Play ground
 
