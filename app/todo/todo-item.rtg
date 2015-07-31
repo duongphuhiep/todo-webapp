@@ -7,6 +7,9 @@
 				{ title }
 			</label>
 		</div>
+		<a class="hoverable waves-effect waves-red btn-flat" href="#edit/{ encodedId }" >
+            <i class="material-icons">edit</i>
+        </a>
 		<a class="hoverable waves-effect waves-red btn-flat" onclick={ deleteItem }>
 			<i class="material-icons">clear</i>
 		</a>
@@ -38,7 +41,6 @@
             height: 50px;
             line-height:50px;
         }
-
 		.row {
 			margin:0px;
 			padding:0px;
@@ -46,6 +48,8 @@
 	</style>
 	<script>
 		this.checkboxId = this.id + '_chk';
+
+		this.encodedId = encodeURI(this.id);
 
 		deleteItem(e) {
 			//console.log("delete "+e);
