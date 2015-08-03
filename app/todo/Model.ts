@@ -26,10 +26,10 @@ var TodoStore = riot.observable(new TodoList([
 ]));
 
 //attache the store to the global event dispatcher
-import RiotControl = require("../../node_modules/riotcontrol/riotcontrol");
+import RiotControl = require("RiotControl");
+
 RiotControl.addStore(TodoStore);
 
 //TodoStore to the global riot so that we can use them in the tag script
 riot.TodoStore = TodoStore;
-
 

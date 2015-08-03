@@ -1,10 +1,10 @@
 {
   "name": "todo-webapp",
   "version": "1.0.0",
-  "description": "A demo Todo application with riot, materialcss, stealjs",
+  "description": "A demo Todo application with riot, materialcss, requirejs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "intern-client config=tests/intern",
     "start": "live-server",
     "build:tags": "riot --ext rtg --m app gen/tags.js",
     "build:typescript": "tsc --project app",
@@ -15,15 +15,11 @@
   },
   "author": "hiep",
   "license": "MIT",
-  "system": {
-    "npmIgnore": [
-      "devDependencies",
-      "optionalDependencies"
-    ]
-  },
   "devDependencies": {
+    "intern": "^3.0.0",
     "live-server": "^0.7.1",
     "parallelshell": "^1.2.0",
+    "requirejs": "^2.1.20",
     "riot": "^2.2.2",
     "tsd": "^0.6.3",
     "typescript": "^1.5.3",

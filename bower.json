@@ -1,17 +1,17 @@
 {
-  "name": "steal-riot-example",
+  "name": "todo-webapp",
   "version": "0.0.1",
   "authors": [
     "hiep <duongphuhiep@gmail.com>"
   ],
-  "description": "stealjs riotjs project sample",
+  "description": "requirejs riotjs project sample",
   "main": "index.html",
   "moduleType": [
     "globals"
   ],
   "keywords": [
     "riotjs",
-    "stealjs",
+    "requirejs",
     "Tutorial"
   ],
   "license": "MIT",
@@ -24,7 +24,7 @@
   ],
   "dependencies": {
     "riot": "~2.2.2",
-    "steal": "~0.10.5",
-    "materialize": "~0.97.0"
+    "materialize": "~0.97.0",
+    "requirejs": "~2.1.20"
   }
 }
