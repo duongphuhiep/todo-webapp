@@ -1,6 +1,7 @@
-.idea
-bower_components
-node_modules
-gen
+.idea/
+bower_components/
+node_modules/
+gen/
 draft_
+dist/
 npm-debug.*

@@ -47,7 +47,8 @@ then Navigate to the `app` folder
 * https://github.com/riot/riot/issues/1044
 
 * I stop using [stealjs](http://stealjs.com) beacause it is [not compatible](https://github.com/theintern/intern/issues/453) with [intern](https://theintern.github.io/)
-It might be fix in the future. For now, [requirejs](http://requirejs.org) might have less 'cool' features than [stealjs](http://stealjs.com) but it has strong support by every framework because of its popularity 
+It might be fix in the future. For now, [requirejs](http://requirejs.org) might have less 'cool' features than [stealjs](http://stealjs.com) but it has strong support by every framework because of its popularity
+* [requirejs] is not stable, it sometimes failed to load scripts just by refresh the page (in Chrome+Firefox), the problem might be penalty in real production (stealjs never fail to load script) 
 
 ##Play ground
 

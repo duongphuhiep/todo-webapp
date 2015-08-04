@@ -1,0 +1,9 @@
+{
+	"name": "app",
+	"mainConfigFile":"app/index.js",
+	"out": "dist/index.js",
+	"paths": {
+		"jquery":"empty:"
+	},
+	"optimize":"none"
+}

@@ -18,21 +18,12 @@
 <my-todos></my-todos>
 
 <!--Import jQuery before materialize.js-->
+<!--
 <script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="./bower_components/materialize/dist/js/materialize.js"></script>
+-->
 
-<script src="./bower_components/requirejs/require.js" data-main="app"></script>
-
-<script language="JavaScript">
-	/* only for decoration */
-	$(function() {
-		var parent = $("#deco")
-		for (var i = 1; i<=12; i++) {
-			var cell = $("<div></div>").addClass("col s1").css("background-color", i%2==0 ? "gray":"darkgray").text(i);
-			parent.append(cell);
-		}
-	});
-</script>
+<script src="./bower_components/requirejs/require.js" data-main="app/index"></script>
 
 </body>
 </html>

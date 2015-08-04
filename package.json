@@ -6,9 +6,10 @@
   "scripts": {
     "test": "intern-client config=tests/intern",
     "start": "live-server",
-    "build:tags": "riot --ext rtg --m app gen/tags.js",
+    "build:tags": "riot --ext rtg app gen/tags.js",
     "build:typescript": "tsc --project app",
-    "build": "npm run build:tags && npm run build:typescript",
+    "optimize": "r.js.cmd -o r.json",
+    "build": "npm run build:tags && npm run build:typescript &&",
     "watch:tags": "riot --watch --ext rtg --m app gen/tags.js",
     "watch:typescript": "tsc --watch --project app",
     "watch": "parallelshell \"npm run watch:tags\" \"npm run watch:typescript\""
