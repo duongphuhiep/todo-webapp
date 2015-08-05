@@ -8,17 +8,16 @@ requirejs.config({
 	    jquery: '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min',
 	    materialize: 'bower_components/materialize/dist/js/materialize',
 	    hammerjs: 'bower_components/materialize/js/hammer.min',
-
         tags: 'gen/tags'
     },
     shim: {
 	   /* 'riot': {
 		    exports: 'riot'
 	    },*/
-        'RiotControl': {
+       /* 'RiotControl': { //no need to shim RiotControl because I fixed the module using UMD https://github.com/jimsparkman/RiotControl/issues/16
             deps: ['riot'],
             exports: 'RiotControl'
-        },
+        },*/
         'tags': {
             deps: ['gen/todo/Presenter']
         },
@@ -27,8 +26,7 @@ requirejs.config({
 		    deps: ['hammerjs']
 	    },
 	    'hammerjs': {
-		    deps: ['jquery'],
-		    exports: 'Hammer'
+		    deps: ['jquery']
 	    }
     }
 });
@@ -49,7 +47,4 @@ require(["jquery"], function($) {
 		}
 	});
 });
-
-//include materialize.js
-require(["materialize"], function(m) {});
 

@@ -2,12 +2,14 @@
 
 import riot = require("riot");
 import Model = require("gen/todo/Model");
+import RiotControl = require("RiotControl")
+
 
 /**
  * attache to riot global object so that we can reuse them in the tag script.
  * It is just a work-around
  */
-riot.RiotControl = require('RiotControl');
+riot.RiotControl = RiotControl;
 riot.Model = Model;
 
 riot.TodoStore.on("add", (item:Model.TodoItem) => {
