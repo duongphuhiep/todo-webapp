@@ -1,4 +1,4 @@
-** Project on pending, because I'm on other projects. I will comeback to it later **
+**Project on pending, because I'm on other projects. I will comeback to it later**
 
 # Todo web application
 
