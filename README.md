@@ -1,3 +1,5 @@
+** Project on pending, because I'm on other projects. I will comeback to it later **
+
 # Todo web application
 
 This is a **Work in progress** for my personal learning, I intent to build a full-stack demo application with the following technologies:
